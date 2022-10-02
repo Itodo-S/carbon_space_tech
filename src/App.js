@@ -35,6 +35,7 @@ const containerStyle = {
 //   { lat: -43.999792, lng: 170.463352 },
 // ]
 
+
 function myArr(arr) {
   return {
     lat: arr[0],
@@ -55,13 +56,14 @@ function createKey(location) {
 }
 
 function App() {
+
   const [locate, setLocate] = useState('')
   // console.log({ locate });
   const center = useMemo(() => ({ lat: 12.2502, lng: 64.3372 }), []);
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: " AIzaSyB-iKQ7LCZ3YOsWtljX7b_tjOCFbdEUOoU"
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
   })
 
   const [map, setMap] = React.useState(null)
