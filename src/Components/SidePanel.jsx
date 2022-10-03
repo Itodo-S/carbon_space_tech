@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
+import moment from 'moment';
 
 const SidePanel = ({ locate }) => {
-    // console.log(locate);
+
     return (
         <div className='bg-white w-full h-full p-2 flex flex-col items-center relative'>
             <div className=''>
@@ -12,9 +13,11 @@ const SidePanel = ({ locate }) => {
                 <div className='w-full p-2'>
                     <p className='font-bold mb-3'>Features info</p>
 
-                    <p className='text-stone-600'>Name: {locate ? locate.lng : '---'}</p>
-                    <p className='text-stone-600'>Site Name: ---</p>
-                    <p className='text-stone-600'>Land Cover: ---</p>
+                    <p className='text-stone-600'>Name: {locate ? locate.name : '---'}</p>
+                    <p className='text-stone-600'>Site Name: {locate ? locate.site_name : '---'}</p>
+                    <p className='text-stone-600'>Land Cover: {locate ? locate.land_cover : '---'}</p>
+                    <p className='text-stone-600'>Start: {locate ? moment(locate.start).format('YYYY MMMM Do') : '---'}</p>
+                    <p className='text-stone-600'>End: {locate ? moment(locate.start).format('YYYY MMMM Do') : '---'}</p>
                 </div>
             </div>
 
